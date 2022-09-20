@@ -18,6 +18,13 @@ pipeline {
                 echo 'job has been tested'
             }
         }
+        stage('Docker'){
+            step{
+                script{
+                    sh 'docker build -t python-jenkins/testfile.py .'
+                }
+            }
+        }
             
         }
 
